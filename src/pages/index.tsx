@@ -1,95 +1,68 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import {
+  CTAContainer,
+  Filter,
+  Footer,
+  Gallery,
+  Header,
+  PageContainer,
+  Pagination,
+  PrimaryBanner,
+  VideosContainer,
+} from "../styles/index";
+
+import Image from "next/image";
+import logo from "../../public/images/logo.png";
+import thumbnail from "../../public/images/thumbnail.png";
 
 export default function Home() {
+  const videos = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <PageContainer>
+      <Header>
+        <div className="image-holder">
+          <Image src={logo} alt="logo" width={200} height={80} />
         </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+      </Header>
+      <PrimaryBanner>
+        <span>WEBNARS EXCLUSIVOS</span>
+        <h2>Menos conversinha</h2>
+        <h1>Mais Conversão</h1>
+        <p>
+          Conheça as estrategias que mudaram o jogo e como aplicá-las no seu
+          negócio
+        </p>
+      </PrimaryBanner>
+      <VideosContainer>
+        <Filter>
+          <div className="label-container">
+            <button>Agencias</button>
+            <button>Agencias</button>
+            <button>Agencias</button>
+            <button className="selected">Agencias</button>
+            <button>Agencias</button>
+          </div>
+          <div className="order-container">
+            <p>Ordernar Por</p>
+            <select name="filter" id="filter">
+              <option value="data">Data de Publicação</option>
+              <option value="views">Visualizacoes</option>
+            </select>
+          </div>
+        </Filter>
+        <Gallery>
+          <p>Cards container</p>
+        </Gallery>
+        <Pagination>
+          <p>Pagina</p>
+          <button>1</button>
+          <button>2</button>
+          <button className="selected">3</button>
+          <button>4</button>
+        </Pagination>
+      </VideosContainer>
+      <CTAContainer>TODO CTAContainer</CTAContainer>
+      <Footer>TODO Footer</Footer>
+    </PageContainer>
+  );
 }
