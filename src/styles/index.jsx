@@ -1,5 +1,13 @@
 import styled from "styled-components";
 
+import { CloudDownload } from "styled-icons/bootstrap";
+
+export const DownloadIcon = styled(CloudDownload)`
+  width: 20px;
+  height: 35px;
+  margin-right: 0px;
+  padding: 0 10px;
+`;
 export const PageContainer = styled.div`
   min-height: 100vh;
 `;
@@ -116,6 +124,199 @@ export const Gallery = styled.div`
     p {
       padding: 0 20px;
       font-size: 18px;
+    }
+  }
+`;
+
+export const ModalVideoPlayer = styled.div`
+  display: none;
+
+  &.active {
+    display: flex;
+  }
+
+  div.backdrop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.445);
+    z-index: 10;
+  }
+`;
+export const ModalBody = styled.div`
+  width: 100%;
+  max-width: 500px;
+  height: 100%;
+  max-height: 600px;
+  position: fixed;
+  background-color: #ffffff;
+  z-index: 15;
+  border-radius: 12px;
+  overflow: hidden;
+`;
+
+export const ModalHeader = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  div.blue-line {
+    width: 100%;
+    height: 4px;
+    background-color: #037eff;
+    margin-bottom: 5px;
+  }
+
+  div.title-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    p.title {
+      font-size: 20px;
+      margin: 0px;
+      margin-top: 20px;
+      span {
+        color: #2c83fb;
+      }
+    }
+
+    span.close-button {
+      font-size: 15px;
+      position: absolute;
+      top: 0;
+      right: 10px;
+    }
+  }
+`;
+
+export const VideoPlayer = styled.div`
+  width: 100%;
+  margin: 20px 0px 10px;
+  iframe {
+    width: 100%;
+  }
+`;
+
+export const DescriptionBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px 5%;
+
+  p.subtitle {
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    margin: 0px;
+    border-bottom: solid 1px #c8d4dd;
+  }
+
+  p.text {
+    font-size: 16px;
+    margin-top: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+`;
+
+export const DownloadsBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 5%;
+  p.subtitle {
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    margin: 0px;
+    margin-bottom: 10px;
+    border-bottom: solid 1px #c8d4dd;
+  }
+
+  div.buttons-box {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+
+    div {
+      display: flex;
+      align-items: center;
+      width: 130px;
+      height: 30px;
+      border-radius: 8px;
+      margin-right: 5px;
+      padding: 0px;
+      font-size: 12px;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      &.spreadsheet {
+        background-color: #4ffff0;
+
+        svg {
+          color: #0d857d;
+        }
+        span {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+          padding-left: 5px;
+          font-weight: bold;
+          color: #0d857d;
+          background-color: #9ff1ec;
+          border-radius: 0px 8px 8px 0px;
+        }
+      }
+      &.document {
+        background-color: #82aeff;
+
+        svg {
+          color: #2162da;
+        }
+        span {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+          padding-left: 5px;
+          font-weight: bold;
+          color: #2162da;
+          background-color: #a9ccfa;
+          border-radius: 0px 8px 8px 0px;
+        }
+      }
+      &.presentation {
+        background-color: #ffc964;
+
+        svg {
+          color: #bd7d08;
+        }
+        span {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+          padding-left: 5px;
+          font-weight: bold;
+          color: #bd7d08;
+          background-color: #f3e8d2;
+          border-radius: 0px 8px 8px 0px;
+        }
+      }
     }
   }
 `;

@@ -1,3 +1,5 @@
+import React, { useState } from "react";
+
 import {
   CTAContainer,
   Filter,
@@ -6,6 +8,13 @@ import {
   Pagination,
   PrimaryBanner,
   VideosContainer,
+  ModalVideoPlayer,
+  ModalBody,
+  ModalHeader,
+  VideoPlayer,
+  DescriptionBox,
+  DownloadsBox,
+  DownloadIcon,
 } from "../styles/index";
 
 import FooterComponent from "../components/footer";
@@ -21,6 +30,7 @@ import noCard from "../../public/images/no-card-dark.webp";
 import rating from "../../public/images/rating.webp";
 
 export default function Home() {
+  const [showModal, setShowModal] = useState(false);
   const videos = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
   return (
@@ -59,13 +69,77 @@ export default function Home() {
         <Gallery>
           {videos.map((item, index) => {
             return (
-              <div className="gallery-item" key={index}>
+              <div
+                className="gallery-item"
+                key={index}
+                onClick={() => setShowModal(true)}
+              >
                 <Image src={thumbnail} alt="logo" width={200} height={100} />
                 <p>Como aumentar sua gertacao de leads feat Traktor</p>
               </div>
             );
           })}
+          <ModalVideoPlayer className={showModal ? "modal active" : "modal"}>
+            <div className="backdrop" onClick={() => setShowModal(false)}>
+              <ModalBody>
+                <ModalHeader>
+                  <div className="blue-line"></div>
+                  <div className="title-box">
+                    <p className="title">
+                      <span>Webinar:</span> Como aumentar sua <br /> Geração de
+                      Leads feat. Traktor
+                    </p>
+                    <span
+                      className="close-button"
+                      onClick={() => setShowModal(false)}
+                    >
+                      X
+                    </span>
+                  </div>
+                </ModalHeader>
+                <VideoPlayer>
+                  <iframe
+                    height="310"
+                    src="https://www.youtube.com/embed/SNqC88vk2bg"
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  ></iframe>
+                </VideoPlayer>
+
+                <DescriptionBox>
+                  <p className="subtitle">Descrição</p>
+                  <p className="text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Morbi fermentum sapien non massa efficitur ornare. Aenean
+                    luctus dictum aliquam. Nulla et ipsum non mi ultricies
+                    luctus. In vestibulum quam eget pulvinar molestie. Cras
+                    interdum justo ac mauris blandit ullamcorper eget ut turpis
+                  </p>
+                </DescriptionBox>
+
+                <DownloadsBox>
+                  <p className="subtitle">Downloads</p>
+                  <div className="buttons-box">
+                    <div className="spreadsheet">
+                      <DownloadIcon /> <span>Spreadsheet.xls</span>
+                    </div>
+                    <div className="document">
+                      <DownloadIcon />
+                      <span>Document.doc</span>
+                    </div>
+                    <div className="presentation">
+                      <DownloadIcon />
+                      <span>Presentation.ppt</span>
+                    </div>
+                  </div>
+                </DownloadsBox>
+              </ModalBody>
+            </div>
+          </ModalVideoPlayer>
         </Gallery>
+
         <Pagination>
           <p>Pagina</p>
           <button>1</button>
