@@ -3,10 +3,9 @@ import styled from "styled-components";
 import { CloudDownload } from "styled-icons/bootstrap";
 
 export const DownloadIcon = styled(CloudDownload)`
-  width: 20px;
-  height: 35px;
-  margin-right: 0px;
-  padding: 0 10px;
+  width: 30px;
+  height: 30px;
+  padding: 0 5px;
 `;
 export const PageContainer = styled.div`
   min-height: 100vh;
@@ -259,7 +258,7 @@ export const DownloadsBox = styled.div`
       border-radius: 8px;
       margin-right: 5px;
       padding: 0px;
-      font-size: 12px;
+      font-size: 11px;
       outline: none;
       border: none;
       cursor: pointer;
