@@ -39,13 +39,24 @@ export const PrimaryBanner = styled.div`
     margin-bottom: 0;
   }
 
-  h1 {
-    color: #037eff;
-    border-bottom: solid 1px #c8d4dd;
-    font-size: 70px;
-    margin-top: 0px;
-    padding-bottom: 24px;
-    margin-bottom: 1px;
+  div {
+    display: flex;
+    position: relative;
+    h1 {
+      background: linear-gradient(to right, #2c83fb, #1f76f0);
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+      border-bottom: solid 1px #c8d4dd;
+      font-size: 70px;
+      margin-top: 0px;
+      padding-bottom: 24px;
+      margin-bottom: 1px;
+    }
+    img {
+      position: absolute;
+      right: -25px;
+      top: 5px;
+    }
   }
 
   small {
@@ -103,6 +114,24 @@ export const Gallery = styled.div`
   align-items: center;
   justify-content: center;
   padding: 30px 0;
+  .gallery-item {
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    margin: 12px;
+    border: 0;
+
+    img {
+      width: 100% !important;
+      object-fit: cover;
+      height: 100%;
+      border-radius: 20px 20px 0px 0px;
+    }
+
+    p {
+      padding: 0 20px;
+      font-size: 18px;
+    }
+  }
 `;
 
 export const Pagination = styled.div`
@@ -141,6 +170,68 @@ export const Pagination = styled.div`
 
 export const CTAContainer = styled.div`
   background-color: #f0f8ff;
+  display: flex;
+  align-items: center;
+  padding: 30px 10% 0px;
+
+  div.cta-image {
+    width: 50%;
+  }
+
+  div.cta-box {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin-left: 60px;
+    div.cta-text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 20px;
+      border-bottom: solid 1px #c8d4dd;
+      p {
+        margin: 0px 0px 5px;
+        font-size: 40px;
+      }
+      span {
+        font-size: 25px;
+        margin-bottom: 20px;
+      }
+    }
+
+    div.cta-button-box {
+      display: flex;
+      align-items: center;
+
+      button.cta-button {
+        width: 260px;
+        height: 70px;
+        margin-right: 20px;
+        font-size: 18px;
+        color: #ffffff;
+        background-color: #037eff;
+        border-radius: 40px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+      }
+    }
+
+    div.cta-details {
+      display: flex;
+      align-items: center;
+
+      p {
+        font-size: 16px;
+      }
+      img {
+        margin-right: 5px;
+        &.ratings-icon {
+          margin-left: 5px;
+        }
+      }
+    }
+  }
 `;
 
 export const Footer = styled.div``;
