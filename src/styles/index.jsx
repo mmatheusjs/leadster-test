@@ -4,20 +4,6 @@ export const PageContainer = styled.div`
   min-height: 100vh;
 `;
 
-export const Header = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100px;
-
-  .image-holder {
-    height: 100px;
-    img {
-      object-fit: contain;
-    }
-  }
-`;
-
 export const PrimaryBanner = styled.div`
   background-color: #f0f8ff;
   display: flex;
@@ -233,5 +219,3 @@ export const CTAContainer = styled.div`
     }
   }
 `;
-
-export const Footer = styled.div``;

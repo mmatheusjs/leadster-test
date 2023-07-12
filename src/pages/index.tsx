@@ -1,14 +1,15 @@
 import {
   CTAContainer,
   Filter,
-  Footer,
   Gallery,
-  Header,
   PageContainer,
   Pagination,
   PrimaryBanner,
   VideosContainer,
 } from "../styles/index";
+
+import FooterComponent from "../components/footer";
+import HeaderComponent from "../components/header";
 
 import Image from "next/image";
 import logo from "../../public/images/logo.png";
@@ -24,11 +25,7 @@ export default function Home() {
 
   return (
     <PageContainer>
-      <Header>
-        <div className="image-holder">
-          <Image src={logo} alt="logo" width={200} height={80} />
-        </div>
-      </Header>
+      <HeaderComponent />
       <PrimaryBanner>
         <span>WEBNARS EXCLUSIVOS</span>
         <h2>Menos conversinha,</h2>
@@ -110,7 +107,7 @@ export default function Home() {
           </div>
         </div>
       </CTAContainer>
-      <Footer>TODO Footer</Footer>
+      <FooterComponent />
     </PageContainer>
   );
 }
